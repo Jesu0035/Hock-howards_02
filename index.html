@@ -8,37 +8,49 @@
 </head>
 <body>
 <header>
-<h1 >The Magic is coming ...soon!</h1>  
+<h1 class="tittle" >&#x2728;The Hogwarts student's List!&#x2728;</h1>  
 </header>
 
 <div class="filters">
 <div><p>Filter by house:
-<button class="filter" id="griff_filter" data-action="filter" data-filter="griff">Griffindor </button>
-<button class="filter" id="huff_filter" data-action="filter" data-filter="huff">Hufflepuff </button>
-<button class="filter" id="rav_filter" data-action="filter" data-filter="rav">Ravenclaw </button>
-<button class="filter" id="sly_filter" data-action="filter" data-filter="sly">Slytherin</button>
-<button class="filter" id="allhouse_filter" data-action="filter" data-filter="allhouse"> All</button>
+<button class="filter" id="griff_filter" data-action="filter" data-filter="griff">Griffindor House </button>
+<button class="filter" id="griff_filter" data-action="filter" data-filter="huff">Hufflepuff  House</button>
+<button class="filter" id="griff_filter" data-action="filter" data-filter="rav">Ravenclaw House</button>
+<button class="filter" id="griff_filter" data-action="filter" data-filter="sly">Slytherin house</button>
+<button class="filter" id="griff_filter" data-action="filter" data-filter="allhouse"> All Houses</button>
 </p>
 </div>
 <div><p>Filter by expel:
-<button class="filter" id="exp_filter" data-action="filter" data-filter="exp">Expelled </button>
+<button class="filter" id="exp_filter" data-action="filter" data-filter="exp"> Expelled </button>
 <button class="filter" id="nonexp_filter" data-action="filter" data-filter="nonexp"> Non-expelled</button>
 <button class="filter" id="huff_filter" data-action="filter" data-filter="allexpstudents"> All students</button>
 </p>
 </div>
 </div>
+<!-- playing with the search bar -->
+<div id="searchWrapper">
+  <input
+      type="text"
+      name="searchBar"
+      id="searchBar"
+      placeholder="search "
+  />
+</div>
+
+
+<!-- playing with the search bar -->
 
 <table id="list">
 <thead class="thead">
 <tr id="sorting">
-<!-- <th></th> -->
-<th data-action="sort" data-sort-direction="asc" data-sort="firstName">First Name</th>
-<th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+ <th></th> 
+<th class='clik' data-action="sort" data-sort-direction="asc" data-sort="firstName">sort by:First Name</th>
+<th class='clik'data-action="sort" data-sort-direction="asc" data-sort="lastName">sort by:Last Name</th>
 <th>Middle Name</th>
 <th>Nickname</th>
-<!-- <th>Image Filename</th> -->
+ <!-- <th>Image Filename</th>  -->
 <th>House</th>
-<th>expelled</th>
+<th>Expelled</th>
 <th>Non-expelled</th>
 </tr>
 </thead>
@@ -50,24 +62,22 @@
 <template id="student">
 <tr>
 
-<!-- <td data-field="fullName">FULL NAME</td> -->
-<!-- <td data-field="avatar"><img src="images/nott_t.png"/></td> -->
+ 
+ <td data-field="avatar"><img src="images/nott_t.png"/></td> 
 
 <button id="myBtn">Read more....</button>
-
-
 <td data-field="firstName">FIRST NAME</td>
 <td data-field="lastName">LAST NAME</td>
 <td data-field="middleName">MIDDLE NAME</td>
 <td data-field="nickName">NICKNAME</td>
-<!-- <td data-field="imageFilename">IMAGE FILENAME</td> -->
+<!--  <td data-field="imageFilename">IMAGE FILENAME</td>  -->
 <td data-field="house">HOUSE</td>
 <td data-field="prefbutton"></td>
 <td data-field="expbutton"></td>
 </tr>
 </template>
 
-<div class="modal">
+<div id= 'createModal' class="modal">
   <div class="profile">
     <img src='' alt=''class='modal-picture'>
    <!-- <span class="close">&times;</span> -->
@@ -83,22 +93,6 @@
    </div>
                         
    </div>
-<!-- modal -->
-<!-- <div class="modal hide">
-<section class="studentdata">
-<img src="images/nott_t.png"/>
-<div class="data-modal">Full name</div>
-<div class="studentinfo">
-<div class="data-modal">
-<h4>First Name:</h4>
-<h4>Middle Name:</h4>
-<h4>Nick Name:</h4>
-<h4>Last Name:</h4>
-<h4>Blood:</h4>
-<h4>Extra info:</h4>
-</div>
-</section>
-</div> -->
 
     <script src="script.js"></script>
 

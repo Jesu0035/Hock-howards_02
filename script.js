@@ -16,6 +16,7 @@ filterBy: "all",
 sortBy: "firstname",
  sortDir: "asc",
 };
+/* const createModal = document.querySelector(".modal"); */
 
 function start() {
  registerButtons();
@@ -26,7 +27,8 @@ function registerButtons() {
 document.querySelectorAll("[data-action='filter']")
 .forEach((button) => button.addEventListener("click", selectFilter));
 
-document.querySelectorAll("[data-action='sort']").forEach((button) => button.addEventListener("click", selectSort));
+ document.querySelectorAll("[data-action='sort']").forEach((button) => button.addEventListener("click", selectSort));
+
 }
 
 function loadJSON() {
@@ -75,7 +77,7 @@ displayList(allStudents);
 
 }
 
-//Different filters
+
 function selectFilter(event) {
 const filter = event.target.dataset.filter;
   
@@ -102,33 +104,26 @@ return filteredList;
 }
 
 function isGriff(student) {
-  // console.log("griffruns");
-  return(student.house === "Gryffindor") 
-  
-  
+return(student.house === "Gryffindor") 
+    
 }
 
 function isHuff(student) {
-  // console.log("griffruns");
-  return(student.house === "Hufflepuff") 
+return(student.house === "Hufflepuff") 
   
 }
 
 function isRav(student) {
-  // console.log("griffruns");
  return (student.house === "Ravenclaw") 
 }
 
 function isSly(student) {
-  // console.log("griffruns");
 return (student.house === "Slytherin")
 
 }
 
-//----------sorting
-
 function selectSort(event) {
-// console.log("selectsort");
+
 const sortBy = event.target.dataset.sort;
 const sortDir = event.target.dataset.sortDirection;
 
@@ -159,6 +154,7 @@ settings.direction = 1;
 sortedList = sortedList.sort(sortByProperty);
 
 function sortByProperty(nameA, nameB) {
+
     console.log(`sortBy is ${settings.sortBy}`);
     if (nameA[settings.sortBy] < nameB[settings.sortBy]) {
       console.log(nameA);
@@ -176,7 +172,6 @@ function buildList() {
 const currentList = filterList(allStudents);
 const sortedList = sortList(currentList);
 
-  // displayList(currentList);
   displayList(sortedList);
 }
 
@@ -202,20 +197,31 @@ if (student.middleName.includes('"')) {
   }
 
 clone.querySelector("[data-field=lastName]").textContent = student.lastName;
-/* clone.querySelector("[data-field=avatar]").children[0].src =
-    "images/" + student.lastName + "_" + firstLetter + ".png"; */
+ clone.querySelector("[data-field=avatar]").children[0].src =
+    "images/" + student.lastName + "_" + firstLetter + ".png"; 
   clone.querySelector("[data-field=house]").textContent = student.house;
-/* ----------- modal--------- */
- const button = clone.querySelector("#myBtn");
+/* ----------- modal doesnt work properly, when click --------- */
+ 
+/* const button = clone.querySelector("#myBtn");
 
 const modal = document.querySelector('.modal');
 button.addEventListener('click',  e =>{
-createModal(eachStudent,modal)
- modal.classList.toggle('active') 
+ createModal (eachStudent, modal) 
+  modal.classList.toggle('active')
+  
   })
+
+ function createModal(){
+   const modal = document.querySelector('.modal');
+
+ }
+  modal.style.display = 'block'; */
     /* ........... modal----------- */
 
   document.querySelector("#list tbody").appendChild(clone);
 
-
+ /*   modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+}) */ 
 };
+  
